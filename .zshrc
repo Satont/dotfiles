@@ -9,8 +9,13 @@ antigen bundle heroku
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
-
+antigen bundle deno
+antigen bundle docker
 antigen bundle nvm
+antigen bundle docker-compose
+antigen bundle fzf
+antigen bundle zsh-history-substring-search
+
 NVM_AUTOLOAD=1
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -35,3 +40,10 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export DENO_INSTALL="/home/satont/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export FZF_BASE=/usr/bin/fzf
+
+alias lwjerri="ssh -i ~/.ssh/lwjerri ubuntu@lwjerri.ml"
+alias satont="ssh root@satont.ru"
+alias shovely="ssh ubuntu@shovely.tk"
+alias rusty="ssh ubuntu@rusty777.ml"
