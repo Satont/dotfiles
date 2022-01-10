@@ -47,3 +47,6 @@ alias lwjerri="ssh -i ~/.ssh/lwjerri ubuntu@lwjerri.ml"
 alias satont="ssh root@satont.ru"
 alias shovely="ssh ubuntu@shovely.tk"
 alias rusty="ssh ubuntu@rusty777.ml"
+
+alias s="du -h --max-depth=1"
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
