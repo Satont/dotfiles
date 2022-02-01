@@ -11,12 +11,12 @@ antigen bundle lein
 antigen bundle command-not-found
 antigen bundle deno
 antigen bundle docker
-antigen bundle nvm
+#antigen bundle nvm
+antigen bundle nvs
 antigen bundle docker-compose
 antigen bundle fzf
 antigen bundle zsh-history-substring-search
 
-NVM_AUTOLOAD=1
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
@@ -24,16 +24,13 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 
 # Load the theme.
-antigen theme spaceship-prompt/spaceship-prompt
+#antigen theme spaceship-prompt/spaceship-prompt
 
 SPACESHIP_DIR_TRUNC=0
 SPACESHIP_DIR_TRUNC_REPO=false
 SPACESHIP_BATTERY_SHOW=false
 # Tell Antigen that you're done.
 antigen apply
-
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 #sudo service docker status || sudo service docker start
 
@@ -47,6 +44,12 @@ alias lwjerri="ssh -i ~/.ssh/lwjerri ubuntu@lwjerri.ml"
 alias satont="ssh root@satont.ru"
 alias shovely="ssh ubuntu@shovely.tk"
 alias rusty="ssh ubuntu@rusty777.ml"
+alias calitry="ssh ubuntu@calitry.tk"
+alias marmok="ssh root@46.175.146.222"
 
 alias s="du -h --max-depth=1"
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+eval "$(starship init zsh)"
+
+export NVS_HOME="$HOME/.nvs"
+[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
