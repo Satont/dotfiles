@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  reverse-proxy:
+    image: traefik:latest
+    container_name: traefik
+    restart: unless-stopped
+    # ports:
+      # - 80:80
+      # - 443:443
+    network_mode: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # Map the static configuration into the container
+      - ./config/static.yml:/etc/traefik/traefik.yml:ro
+      # Map the dynamic configuration into the container
+      - ./config/dynamic.yml:/etc/traefik/dynamic.yml:ro
+      # Map the certificats into the container
+      - ./certs:/etc/certs:ro
+  whoami:
+      image: containous/whoami
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.whoami.rule=Host(`whoami.satont.localhost`)"
+        - "traefik.http.routers.whoami.tls=true"
+        # - "traefik.http.services.<service_name>.loadbalancer.server.port=<port>"

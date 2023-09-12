@@ -1,0 +1,59 @@
+http:
+  routers:
+    traefik:
+      rule: "Host(`traefik.satont.localhost`)"
+      service: "api@internal"
+      tls:
+        domains:
+          - main: "satont.localhost"
+            sans:
+              - "*.satont.localhost"
+    server-manager:
+      rule: "Host(`server-manager.satont.localhost`)"
+      service: server-manager
+      entryPoints:
+        - "https"
+      tls: true
+    twir:
+      rule: "Host(`twir.satont.localhost`) && !PathPrefix(`/dashboard`)"
+      service: twir
+      entryPoints:
+        - "https"
+      tls: true
+    twir-dashboard:
+      rule: "Host(`twir.satont.localhost`) && PathPrefix(`/dashboard`)"
+      service: twir-dashboard
+      entryPoints:
+        - "https"
+      tls: true
+    relay:
+      rule: "Host(`relay.satont.localhost`)"
+      service: relay
+      entryPoints:
+        - "https"
+      tls: true
+
+  services:
+    server-manager:
+      loadBalancer:
+        servers:
+          - url: "http://127.0.0.1:1337"
+    twir:
+      loadBalancer:
+        servers:
+          - url: "http://127.0.0.1:3005"
+    twir-dashboard:
+      loadBalancer:
+        servers:
+          - url: "http://127.0.0.1:3006"
+    relay:
+      loadBalancer:
+        servers:
+          - url: "http://127.0.0.1:3001"
+
+
+
+tls:
+  certificates:
+    - certFile: "/etc/certs/local-cert.pem"
+      keyFile: "/etc/certs/local-key.pem"
