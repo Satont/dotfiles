@@ -19,10 +19,10 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen apply
 eval "$(starship init zsh)"
 
-#export PATH=$PATH:/usr/local/go/bin
+export SHELL=/bin/zsh
 export PATH=$PATH:$HOME/.cargo/bin:/usr/local/go/bin:~/go/bin
 export PATH=$PATH:/snap/bin
-export SHELL=/bin/zsh
+export PATH=/opt/homebrew/bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -71,4 +71,3 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 # autoload nvm
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
-export PATH=/opt/homebrew/bin:$PATH
