@@ -1,0 +1,43 @@
+[theme]
+theme = "dracula"
+
+[icons]
+icons = "awesome6"
+
+
+[[block]]
+block = "weather"
+format = "$icon $temp,$wind m/s"
+[block.service]
+name = "metno"
+coordinates = ["55.5807481","36.8251304"]
+
+[[block]]
+block = "disk_space"
+info_type = "available"
+alert_unit = "GB"
+alert = 10.0
+warning = 15.0
+format = " $icon $available "
+format_alt = " $icon $available / $total "
+
+[[block]]
+block = "memory"
+format = " $icon $mem_used.eng(w:1) "
+format_alt = " $icon_swap $swap_free.eng(w:3,u:B,p:M)/$swap_total.eng(w:3,u:B,p:M)($swap_used_percents.eng(w:2)) "
+interval = 30
+warning_mem = 70
+critical_mem = 90
+
+[[block]]
+block = "cpu"
+interval = 1
+format = " $icon $utilization "
+format_alt = " $icon $frequency{ $boost|} "
+
+[[block]]
+block = "time"
+interval = 60
+[block.format]
+full = " $icon $timestamp.datetime(f:'%d.%m.%y %R', l:ru_RU) "
+short = " $icon $timestamp.datetime(f:%R) "
