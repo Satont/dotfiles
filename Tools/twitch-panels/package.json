@@ -1,0 +1,7 @@
+{
+  "name": "twitch-panels",
+  "scripts": {
+    "update": "node index.js"
+  },
+  "type": "module"
+}

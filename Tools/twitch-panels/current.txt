@@ -1,0 +1,38 @@
+[
+  {
+    id: '130684797',
+    type: 'DEFAULT',
+    title: null,
+    imageURL: 'https://panels.twitch.tv/panel-916997906-image-4fcffd76-6066-4586-a009-3ab7f6f81235',
+    linkURL: null,
+    description: '# 私のPCの特徴\n' +
+      '\n' +
+      '> + プロセッサー  Ryzen 2700, OC 3800MHz\n' +
+      '> + ビデオカード  Palit RTX2060\n' +
+      '> + メインメモリ  ダイは異なるが、すべて同じ周波数にオーバークロックされている 24GB, 3000Mhz\n' +
+      '> + マザーボード Asus ROG Strix b350-f gaming',
+    __typename: 'DefaultPanel'
+  },
+  {
+    id: '130684802',
+    type: 'DEFAULT',
+    title: null,
+    imageURL: 'https://panels.twitch.tv/panel-916997906-image-b2d657c9-b8e0-4b2a-a044-94159b39b5a7',
+    linkURL: null,
+    description: '> # リンク集\n' +
+      '\n' +
+      '> [donate](https://donate.stream/satont333 )\n' +
+      '> [telegram](https://t.me/programmerinsocks)\n' +
+      '> [github](https://github.com/satont)',
+    __typename: 'DefaultPanel'
+  },
+  {
+    id: '130684796',
+    type: 'DEFAULT',
+    title: null,
+    imageURL: 'https://panels.twitch.tv/panel-916997906-image-58b068c4-0e7c-468c-bbdb-1ace966061e8',
+    linkURL: null,
+    description: '> 私について\n\n> 名前 Alexander\n> 年齢 24\n> 都市 Moscow\n> ペニスサイズ 9 centimeter',
+    __typename: 'DefaultPanel'
+  }
+]
