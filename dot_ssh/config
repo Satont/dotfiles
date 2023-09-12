@@ -1,0 +1,21 @@
+Host *
+    UseKeychain yes
+    Host *
+
+Host vic.satont.ru
+    HostName vic.satont.ru
+    User satont
+    Port 22000
+
+Host satont
+	HostName satont.ru
+	User root
+
+Host twir
+	HostName 194.107.126.47
+	user satont
+
+Host *
+    ServerAliveInterval 30
+
+AddKeysToAgent yes
