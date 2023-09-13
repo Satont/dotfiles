@@ -20,9 +20,14 @@ antigen apply
 eval "$(starship init zsh)"
 
 export SHELL=/bin/zsh
+export PATH="/usr/local/bin:$PATH"
 export PATH=$PATH:$HOME/.cargo/bin:/usr/local/go/bin:~/go/bin
 export PATH=$PATH:/snap/bin
 export PATH=/opt/homebrew/bin:$PATH
+export PNPM_HOME="/home/satont/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -39,10 +44,7 @@ alias pm2=pm
 alias grep="rg"
 alias jq="fx"
 
-# pnpm
-export PNPM_HOME="/home/satont/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+
 
 
 # ssh agent
@@ -71,3 +73,10 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 # autoload nvm
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
+# bun completions
+[ -s "/Users/satont/.bun/_bun" ] && source "/Users/satont/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
