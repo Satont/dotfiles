@@ -46,3 +46,7 @@ ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_V
 
 # bun completions
 [ -s "/Users/satont/.bun/_bun" ] && source "/Users/satont/.bun/_bun"
+
+if [ -d "$HOME/adb-tools" ] ; then
+ export PATH="$HOME/adb-tools:$PATH"
+fi
