@@ -1,30 +1,24 @@
 source ~/.config/antigen.zsh
 
-
 antigen use oh-my-zsh
 
 antigen bundle git
 antigen bundle command-not-found
-#antigen bundle docker
-antigen bundle nvm
+#antigen bundle nvm
 antigen bundle docker-compose
 antigen bundle fzf
 antigen bundle zsh-history-substring-search
-antigen bundle zsh-npm-scripts-autocomplete
-#antigen bundle deno
 antigen bundle go
 antigen bundle zsh-users/zsh-syntax-highlighting
-
 antigen bundle zsh-users/zsh-autosuggestions
 
 antigen apply
+
 eval "$(starship init zsh)"
+
 
 alias cu="chezmoi re-add"
 alias cat="bat --style=plain"
 alias rm="rm -irf"
-alias "rm-unused-deps"="yay -Yc"
-alias "clear-pkgs-cache"="yay -Scc"
-alias pm2=pm
 alias grep="rg"
 alias jq="fx"
