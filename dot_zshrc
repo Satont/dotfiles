@@ -17,7 +17,6 @@ antigen apply
 
 eval "$(starship init zsh)"
 
-
 alias cu="chezmoi re-add"
 alias cat="bat --style=plain"
 alias rm="rm -irf"
