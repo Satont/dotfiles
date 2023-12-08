@@ -1,4 +1,5 @@
 source ~/.config/antigen.zsh
+source ~/.zshprivate
 
 antigen use oh-my-zsh
 
@@ -22,3 +23,11 @@ alias cat="bat --style=plain"
 alias rm="rm -irf"
 alias grep="rg"
 alias jq="fx"
+
+# pnpm
+export PNPM_HOME="/Users/satont/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
