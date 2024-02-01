@@ -21,7 +21,7 @@ alias cu="chezmoi re-add"
 alias cat="bat --style=plain"
 alias rm="rm -irf"
 alias grep="rg"
-alias jq="fx"
+#alias jq="fx"
 
 # pnpm
 export PNPM_HOME="/Users/satont/Library/pnpm"
@@ -30,3 +30,10 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# bun completions
+[ -s "/Users/satont/.bun/_bun" ] && source "/Users/satont/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
