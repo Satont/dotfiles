@@ -13,7 +13,7 @@ yabai -m rule --add title="^Preview" manage=off
 yabai -m rule --add title="^Preferences" manage=off
 yabai -m rule --add title="^Settings" manage=off
 yabai -m rule --add title="^Raycast" manage=off
-yabai -m rule --add tiel="^Alacritty" manage=on
+yabai -m rule --add title="^Finder" manage=off
 
 jbproducts='^(IntelliJ IDEA|WebStorm|CLion)$'
 yabai -m rule --add app="${jbproducts}" manage=off
