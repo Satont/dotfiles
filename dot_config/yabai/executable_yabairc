@@ -12,6 +12,11 @@ yabai -m rule --add app="^(Calculator|System Preferences|System Settings|Archive
 yabai -m rule --add title="^Preview" manage=off
 yabai -m rule --add title="^Preferences" manage=off
 yabai -m rule --add title="^Settings" manage=off
+yabai -m rule --add title="^Raycast" manage=off
+
+jbproducts='^(IntelliJ IDEA|WebStorm|CLion)$'
+yabai -m rule --add app="${jbproducts}" manage=off
+yabai -m signal --add event=window_created app="${apps}" action='~/.config/yabai/jbproducts'
 
 yabai -m config window_gap     12
 yabai -m config focus_follows_mouse autofocus
