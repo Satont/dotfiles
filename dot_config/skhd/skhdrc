@@ -24,3 +24,8 @@ ctrl - up : yabai -m window --focus north
 ctrl + shift - f : yabai -m window --toggle float
 
 cmd - return : open -na /Applications/Alacritty.app
+cmd - q : yabai -m window --close
+
+.blacklist [
+    "intellij idea"
+]
