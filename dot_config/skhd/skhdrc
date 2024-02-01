@@ -9,17 +9,17 @@ ctrl - 8 : yabai -m space --focus 8
 ctrl - 9 : yabai -m space --focus 9
 ctrl - 0 : yabai -m space --focus 10
 
-ctrl + alt - left : yabai -m window --warp west
-ctrl + alt - right : yabai -m window --warp east
-ctrl + alt - down : yabai -m window --warp south
-ctrl + alt - up : yabai -m window --warp north
+cmd + alt - left : yabai -m window --warp west
+cmd + alt - right : yabai -m window --warp east
+cmd + alt - down : yabai -m window --warp south
+cmd + alt - up : yabai -m window --warp north
 
-ctrl - left : yabai -m window --focus west
-ctrl - right : yabai -m window --focus east
-ctrl - down : yabai -m window --focus south
-ctrl - up : yabai -m window --focus north
+cmd - left : yabai -m window --focus west
+cmd - right : yabai -m window --focus east
+cmd - down : yabai -m window --focus south
+cmd - up : yabai -m window --focus north
 
-ctrl + shift - f : yabai -m window --toggle float
+cmd + shift - f : yabai -m window --toggle float
 
 cmd - return : open -na /Applications/Alacritty.app
 cmd - q : yabai -m window --close
