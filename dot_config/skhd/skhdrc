@@ -22,3 +22,5 @@ ctrl - down : yabai -m window --focus south
 ctrl - up : yabai -m window --focus north
 
 ctrl + shift - f : yabai -m window --toggle float
+
+cmd - return : open -na /Applications/Alacritty.app
