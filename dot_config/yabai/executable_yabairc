@@ -1,5 +1,22 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
+
+### FOCUS SOME WINDOW AFTER SOME WINDOW CLOSED
+function record_display_id {
+  display_id=$(yabai -m query --windows --window | jq '.display')
+  ruby $HOME/display_focus.rb write $display_id
+}
+
+function focus_current_display {
+  yabai -m display --focus $(ruby $HOME/display_focus.rb read)
+}
+
+yabai -m signal --add event=window_focused action="${functions[record_display_id]}"
+yabai -m signal --add event=application_front_switched action="${functions[record_display_id]}"
+yabai -m signal --add event=window_destroyed action="${functions[focus_current_display]}"
+yabai -m signal --add event=application_terminated action="${functions[focus_current_display]}"
+###
+
 yabai -m config layout bsp
 
 yabai -m space 1 --label web
@@ -22,7 +39,8 @@ yabai -m signal --add event=window_created app="${apps}" action='~/.config/yabai
 yabai -m config window_gap     12
 yabai -m config focus_follows_mouse autofocus
 yabai -m config window_shadow float
-yabai -m config window_animation_duration 0.25
+yabai -m config window_animation_duration 0.35
+yabai -m config auto_balance on
 
 yabai -m config mouse_modifier ctrl
 yabai -m config mouse_action1 move
