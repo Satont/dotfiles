@@ -1,7 +1,3 @@
-Host *
-    UseKeychain yes
-    Host *
-
 Host vic.satont.ru
     HostName vic.satont.ru
     User satont
