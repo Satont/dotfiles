@@ -12,3 +12,6 @@ program = "/bin/zsh"
 [[keyboard.bindings]]
 key = "NumpadEnter"
 chars = "\r"
+
+[window]
+opacity = 0.6
