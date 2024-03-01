@@ -38,7 +38,7 @@
 
     "cpu": {
         "interval": 2,
-        "format": "{}% "
+        "format": "{usage}% "
     },
 
     "clock": {
