@@ -1,7 +1,7 @@
 source ~/.config/antigen.zsh
 source ~/.zshprivate
 
-antigen use oh-my-zsh
+#antigen use oh-my-zsh
 
 antigen bundle git
 antigen bundle command-not-found
@@ -17,10 +17,14 @@ antigen apply
 
 eval "$(starship init zsh)"
 
+SAVEHIST=100000
+HISTFILE=~/.zsh_history
+
 alias cu="chezmoi re-add"
 alias cat="bat --style=plain"
 alias rm="rm -irf"
 alias grep="rg"
+alias archclean="pacman -Qtdq | sudo pacman -Rns -"
 #alias jq="fx"
 
 # pnpm
@@ -37,5 +41,3 @@ esac
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-export PATH=$PATH:/home/satont/.spicetify
