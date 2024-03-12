@@ -5,7 +5,7 @@ antigen use oh-my-zsh
 
 antigen bundle git
 antigen bundle command-not-found
-#antigen bundle nvm
+antigen bundle nvm
 antigen bundle docker-compose
 antigen bundle fzf
 antigen bundle zsh-history-substring-search
@@ -25,12 +25,5 @@ alias cat="bat --style=plain"
 alias rm="rm -irf"
 alias grep="rg"
 alias archclean="pacman -Qtdq | sudo pacman -Rns -"
+alias "dps"='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Networks}}\t{{.State}}\t{{.Status}}"'
 #alias jq="fx"
-
-# pnpm
-export PNPM_HOME="/Users/satont/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
