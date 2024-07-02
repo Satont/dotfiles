@@ -27,3 +27,6 @@ alias grep="rg"
 alias archclean="pacman -Qtdq | sudo pacman -Rns -"
 alias "dps"='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Networks}}\t{{.State}}\t{{.Status}}"'
 #alias jq="fx"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/nomad nomad
