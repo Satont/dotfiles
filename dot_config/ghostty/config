@@ -1,0 +1,9 @@
+font-family = JetBrains Mono
+background-opacity = 0.6
+theme = catppuccin-mocha
+
+gtk-single-instance = true
+gtk-titlebar = false
+gtk-adwaita = true
+
+shell-integration = zsh
