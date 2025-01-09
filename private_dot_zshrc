@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/satont/.zsh/completions:"* ]]; then export FPATH="/home/satont/.zsh/completions:$FPATH"; fi
 source ~/.config/antigen.zsh
 source ~/.zshprivate
 
@@ -21,12 +23,28 @@ SAVEHIST=100000
 HISTFILE=~/.zsh_history
 
 alias cu="chezmoi re-add"
+alias rcat="cat"
 alias cat="bat --style=plain"
 alias rm="rm -irf"
 alias grep="rg"
 alias archclean="pacman -Qtdq | sudo pacman -Rns -"
 alias "dps"='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Networks}}\t{{.State}}\t{{.Status}}"'
+alias "twirforward"='ssh -L 54322:postgres:5432 satont@194.107.126.47 -p 2222'
 #alias jq="fx"
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/nomad nomad
+# pnpm
+export PNPM_HOME="/home/satont/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+reboot_to_windows ()
+{
+    windows_title=$(grep -i windows /boot/grub/grub.cfg | cut -d "'" -f 2)
+    sudo grub-reboot "$windows_title" && sudo reboot
+}
+alias reboot-to-windows='reboot_to_windows'
+
+# . "/home/satont/.deno/env"
