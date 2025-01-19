@@ -23,7 +23,6 @@ SAVEHIST=100000
 HISTFILE=~/.zsh_history
 
 alias cu="chezmoi re-add"
-alias rcat="cat"
 alias cat="bat --style=plain"
 alias rm="rm -irf"
 alias grep="rg"
