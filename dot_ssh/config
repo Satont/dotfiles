@@ -11,6 +11,10 @@ Host twir
 	HostName 194.107.126.47
 	user satont
 
+Host lwjerri
+	HostName 78.46.90.174
+	user satont
+
 Host *
     ServerAliveInterval 30
 
