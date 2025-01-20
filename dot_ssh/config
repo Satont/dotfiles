@@ -1,3 +1,5 @@
+Include ~/.ssh/private.config
+
 Host satont
 	HostName satont.ru
 	User root
@@ -10,7 +12,13 @@ Host lwjerri
 	HostName 78.46.90.174
 	user satont
 
+Host lwjerri-oracle
+	HostName oracle-1.lwjerri.dev
+	User ubuntu
+	IdentityFile ~/.ssh/lwjerri_oracle_rsa
+
 Host *
     ServerAliveInterval 30
 
 AddKeysToAgent yes
+
