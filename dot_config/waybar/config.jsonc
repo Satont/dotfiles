@@ -21,8 +21,8 @@
     "hyprland/workspaces": {
     "persistent-workspaces": {
             "DP-2": [ 1 ],
-            "HDMI-A-1": [ 8 ],
-            "HDMI-A-2": [ 9 ],
+            "HDMI-A-1": [ 9, 10 ],
+            "HDMI-A-2": [ 11, 12 ],
         }
     },
 
