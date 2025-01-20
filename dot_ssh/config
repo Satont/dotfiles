@@ -1,8 +1,3 @@
-Host vic.satont.ru
-    HostName vic.satont.ru
-    User satont
-    Port 22000
-
 Host satont
 	HostName satont.ru
 	User root
