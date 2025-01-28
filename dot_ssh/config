@@ -13,9 +13,13 @@ Host lwjerri
 	user satont
 
 Host lwjerri-oracle
-	HostName oracle-1.lwjerri.dev
+	HostName 130.61.223.243
 	User ubuntu
 	IdentityFile ~/.ssh/lwjerri_oracle_rsa
+
+Host mac
+	HostName 192.168.0.5
+	User satont
 
 Host *
     ServerAliveInterval 30
