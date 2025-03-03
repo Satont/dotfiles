@@ -46,4 +46,13 @@ reboot_to_windows ()
 }
 alias reboot-to-windows='reboot_to_windows'
 
-# . "/home/satont/.deno/env"
+# bun completions
+[ -s "/home/satont/.bun/_bun" ] && source "/home/satont/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
