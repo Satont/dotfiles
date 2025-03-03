@@ -1,14 +1,18 @@
 export SHELL=/bin/zsh
 
+export PATH=$PATH:/usr/local/go/bin
 ### GOLANG
 export GOPATH="$(go env GOPATH)"
 export PATH=$PATH:$GOPATH/bin
 ### GOLANG END
 
 export PATH=$PATH:/usr/local/bin:/opt/homebrew/bin
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 export EDITOR="micro"
+export BROWSER=zen-browser
 
 export PATH=$PATH:/Users/satont/.local/bin
