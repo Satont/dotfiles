@@ -1,10 +1,11 @@
 Include ~/.ssh/private.config
+Include ~/.ssh/twir.config
 
 Host satont
 	HostName satont.ru
 	User root
 
-Host twir
+Host avoro
 	HostName 194.107.126.47
 	user satont
 
@@ -15,7 +16,6 @@ Host lwjerri
 Host lwjerri-oracle
 	HostName 130.61.223.243
 	User ubuntu
-	IdentityFile ~/.ssh/lwjerri_oracle_rsa
 
 Host mac
 	HostName 192.168.0.5
