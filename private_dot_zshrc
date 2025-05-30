@@ -1,5 +1,4 @@
 # Add deno completions to search path
-if [[ ":$FPATH:" != *":/home/satont/.zsh/completions:"* ]]; then export FPATH="/home/satont/.zsh/completions:$FPATH"; fi
 source ~/.config/antigen.zsh
 source ~/.zshprivate
 
@@ -7,9 +6,9 @@ antigen use oh-my-zsh
 
 antigen bundle git
 antigen bundle command-not-found
-antigen bundle nvm
-antigen bundle docker-compose
 antigen bundle fzf
+antigen bundle docker-compose
+antigen bundle nvm
 antigen bundle zsh-history-substring-search
 antigen bundle go
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -29,6 +28,7 @@ alias grep="rg"
 alias archclean="pacman -Qtdq | sudo pacman -Rns -"
 alias "dps"='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Networks}}\t{{.State}}\t{{.Status}}"'
 alias "twirforward"='ssh -L 54322:postgres:5432 satont@194.107.126.47 -p 2222'
+alias edit="microsoft-edit"
 #alias jq="fx"
 
 # pnpm
@@ -56,3 +56,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. "$HOME/.cargo/env"
