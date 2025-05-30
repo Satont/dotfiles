@@ -37,10 +37,10 @@ tooltip {
 #custom-notification {
   /* margin-top: 2px; */
   /* padding-top: 0px; */
-  background-color: rgba(90, 42, 145, 0.568);
-  border-radius: 80px;
-  margin-left: 4px;
-  margin-right: 4px;
+  /* background-color: rgba(90, 42, 145, 0.568); */
+  /* border-radius: 80px; */
+  /* margin-left: 4px; */
+  /* margin-right: 4px; */
 }
 
 /* text-align: center; */
@@ -98,8 +98,8 @@ tooltip {
 
 #tray {
   /* background-color: rgba(170, 170, 170, 0.3); */
-  margin-right: 10px;
-  padding: 0 8px;
+  /* margin-right: 0px; */
+  /* padding: 0 8px; */
   /* border-radius: 8px; */
 }
 
@@ -210,6 +210,6 @@ tooltip {
 
 #custom-notification {
   color: white;
-  padding-left: 13px;
-  padding-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
