@@ -47,6 +47,7 @@
 #memory,
 #custom-lock,
 #disk,
+#custom-notification,
 #custom-power {
   background-color: #101010;
   padding: 0.5rem 1rem;
@@ -123,4 +124,11 @@
   margin-right: 1rem;
   margin-left: 1rem;
   border-radius: 5px;
+}
+
+#custom-notification {
+  border-radius: 5px;
+  margin-left: 0px;
+  margin-right: 1rem;
+  padding-right: 7px;
 }
