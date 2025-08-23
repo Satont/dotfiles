@@ -2,7 +2,8 @@
   "layer": "top",
   "position": "top",
   "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "custom/spotify"
     ],
   "modules-center": ["clock"],
   "modules-right": [
@@ -84,4 +85,10 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
+  "custom/spotify": {
+      "format": "{}",
+      "return-type": "json",
+      "on-click-right": "spotifatius toggle-liked",
+      "exec": "spotifatius monitor"
+  }
 }
