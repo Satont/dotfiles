@@ -22,13 +22,25 @@ SAVEHIST=100000
 HISTFILE=~/.zsh_history
 
 alias cu="chezmoi re-add"
-alias cat="bat --style=plain"
-alias rm="rm -irf"
+alias bat="bat --style=plain"
+alias r="rm -irf"
 alias grep="rg"
 alias archclean="pacman -Qtdq | sudo pacman -Rns -"
 alias "dps"='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Networks}}\t{{.State}}\t{{.Status}}"'
 alias "twirforward"='ssh -L 54322:postgres:5432 satont@194.107.126.47 -p 2222'
 alias edit="microsoft-edit"
+alias dcd="docker context use default"
+alias dct="docker context use twir"
+alias td="docker --context twir"
+
+function tdu() {
+	td service update --with-registry-auth --force --image registry.twir.app/twirapp/$1 twir_$1
+}
+
+function tdl() {
+    td service logs -f --since 5m twir_$1
+}
+
 #alias jq="fx"
 
 # pnpm
@@ -58,3 +70,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 . "$HOME/.cargo/env"
+
+# export SSH_AUTH_SOCK=~/.bitwarden-ssh-agent.sock
