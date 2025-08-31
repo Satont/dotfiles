@@ -1,135 +1,518 @@
-* {
-  font-family: JetbrainsMono Nerd Font;
-  font-size: 16px;
-  min-height: 0;
-  padding-right: 2px;
-  padding-left: 2px;
-  padding-bottom: 0px;
+#waybar.top {
+  background: none;
+  color: #f2f2f2;
+}
+#waybar.top > box.horizontal {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 2pt;
 }
 
-#waybar {
-  background: transparent;
-  color: #c6d0f5;
-  margin: 2px 2px;
+#custom-vpn {
+	color: #7CD47B;
+	margin-right: 10pt;
+}
+
+#custom-temperature {
+	margin-right: 10pt;
+}
+
+#custom-bluetooth {
+	color: #0082FC;
+	margin-right: 10pt;
+	font-size: 11pt;
 }
 
 #workspaces {
-  border-radius: 5px;
-  margin: 5px;
-  background: #101010;
-  margin-left: 1rem;
+  margin-left: 4pt;
+}
+/* #workspaces button { */
+/*   color: #585b70; */
+/* } */
+#workspaces button:not(:first-child) {
+  margin-left: 2pt;
+}
+/* #workspaces button.visible { */
+/*   color: #89b4fa; */
+/* } */
+/* #workspaces button.active { */
+/*   color: #f38ba8; */
+/* } */
+#workspaces button:hover,
+#workspaces button:focus {
+  background: none;
+  border-color: transparent;
+  box-shadow: none;
+}
+/* #workspaces button:hover:not(.active):not(.visible), */
+/* #workspaces button:focus:not(.active):not(.visible) { */
+/*   color: #9399b2; */
+/* } */
+
+#mpris {
+  background: #222222;
+  color: #a6e3a1;
+  border-radius: 12pt;
+  margin-left: 15pt;
+  padding: 0 8pt;
 }
 
-#workspaces button {
-  color: #babbf1;
-  border-radius: 5px;
-  padding: 0.4rem;
-}
-
-#workspaces button.active {
-  color: #99d1db;
-  border-radius: 5px;
-}
-
-#workspaces button:hover {
-  color: #85c1dc;
-  border-radius: 5px;
-}
-
-#custom-music,
-#tray,
-#backlight,
-#clock,
-#battery,
-#pulseaudio,
-#network,
-#cpu,
-#memory,
-#custom-lock,
-#disk,
-#custom-notification,
-#custom-spotify,
-#custom-power {
-  background-color: #101010;
-  padding: 0.5rem 1rem;
-  margin: 3px 0;
-  border-radius: 0px 5px 5px 0px;
-}
-
-#custom-stream_status.up {
-  color: #c3e88d;
-}
-
-#custom-stream_status.warning {
-  color: #ff9e64;
-}
-
-#custom-stream_status.down {
-  color: #ea999c;
+#window {
+  margin-left: 15pt;
+  margin-right: 20pt;
 }
 
 #memory {
-  border-radius: 0px 5px 5px 0px;
+  color: #fab387;
+  margin-right: 12pt;
+}
+
+#disk {
+  color: #28c9af;
+  margin-right: 12pt;
 }
 
 #clock {
-  color: #8caaee;
-  border-radius: 5px;
-  margin-right: 1rem;
+  margin-right: 6pt;
 }
 
-#battery {
-  color: #a6d189;
+#cpu {
+  color: #fa8787;
+  margin-right: 12pt;
 }
 
-#battery.charging {
-  color: #a6d189;
-}
-
-#battery.warning:not(.charging) {
-  color: #e78284;
-}
-
-#backlight {
-  color: #e5c890;
-}
-
-#backlight,
-#battery {
-  border-radius: 0;
-}
-
-#pulseaudio {
-  color: #ea999c;
-  border-radius: 5px 0px 0px 5%;
-  margin-left: 1rem;
-}
-
-#custom-music {
-  color: #ca9ee6;
-  border-radius: 5px;
-}
-
-#custom-lock {
-  border-radius: 5px 0px 0px 5px;
-  color: #babbf1;
-}
-
-#custom-power {
-  margin-right: 1rem;
-  border-radius: 0px 5px 5px 0px;
-  color: #e78284;
+#custom-weather {
+  color: #fff9a7;
+  margin-right: 15pt;
 }
 
 #tray {
-  margin-right: 1rem;
-  margin-left: 1rem;
-  border-radius: 5px;
+  margin-right: 10pt;
+}
+#tray menu {
+  background: #222222;
+  padding: 2pt;
+}
+#tray menu * {
+  margin: 2pt;
+}
+#tray menu check {
+  margin-right: 4pt;
 }
 
-#custom-notification {
-  border-radius: 5px;
-  margin-left: 0px;
-  margin-right: 1rem;
-  padding-right: 7px;
+#language {
+  margin-right: 10pt;
 }
+
+@keyframes blink {
+  to {
+    background-color: rgba(30, 34, 42, 0.5);
+    color: #cdd6f4;
+  }
+}
+
+#pulseaudio {
+  color: #74c7ec;
+  margin-right: 10pt;
+}
+
+#custom-color-picker {
+  margin-left: 6pt;
+  margin-right: 6pt;
+  font-size: 10pt;
+}
+
+#custom-swaync {
+  margin-left: 6pt;
+  margin-right: 6pt;
+  font-size: 10pt;
+}
+
+#custom-power {
+  margin-left: 6pt;
+  margin-right: 11pt;
+  font-size: 10pt;
+}
+
+#waybar.bottom {
+  background: none;
+}
+#waybar.bottom box.modules-center {
+  background: #222222;
+  margin-top: 5pt;
+  padding: 0 4pt;
+  border-top-left-radius: 10pt;
+  border-top-right-radius: 10pt;
+  box-shadow: 0 0 3pt #181825;
+}
+
+#custom-file-manager {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/file-manager.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-terminal {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/terminal.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-zen {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/zen.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-spotify {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/spotify.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 1pt;
+}
+
+#custom-obs-studio {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/obs-studio.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-discord {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/discord.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-telegram {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/telegram.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-whatsapp {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/whatsapp.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-adobe-photoshop {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/adobe-photoshop.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-gimp {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/gimp.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-pinta {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/pinta.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-inkscape {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/inkscape.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-davinci-resolve {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/davinci-resolve.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-steam {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/steam.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-heroic {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/heroic.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-ryujinx {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/ryujinx.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-lutris {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/lutris.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-obsidian {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/obsidian.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-unity {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/unity.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-jetbrains-rider {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/jetbrains-rider.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-jetbrains-idea {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/jetbrains-idea.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-jetbrains-pycharm {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/jetbrains-pycharm.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-jetbrains-webstorm {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/jetbrains-webstorm.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-neovim {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/neovim.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-vs-code {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/vs-code.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-docker {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/docker.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-beekeeper-studio {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/beekeeper-studio.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-excalidraw {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/excalidraw.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-figma {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/figma.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-bruno {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/bruno.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-calculator {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/calculator.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+#custom-anki {
+  background: transparent;
+  background-image: url("/home/nicholas/.config/waybar/icons/anki.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28pt;
+  font-size: 28pt;
+  padding: 0 6pt;
+  margin: 0 2pt;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 12px;
+  font-weight: 800;
+  transition-property: background;
+  transition-duration: 0.5s;
+}
+
+tooltip {
+  background: #222222;
+  color: #cdd6f4;
+  border-radius: 5pt;
+}
+
+/*# sourceMappingURL=style.css.map */
