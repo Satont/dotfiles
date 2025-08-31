@@ -15,7 +15,6 @@
       "memory",
       "disk",
       "pulseaudio",
-      "custom/vpn",
       "tray",
       "custom/color-picker",
       "custom/swaync",
@@ -164,11 +163,11 @@
     },
     "custom/temperature": {
       "format": " {}°C",
-      "interval": 5,
+      "interval": 1,
       "exec": "~/.config/waybar/scripts/temperature.sh",
       "return-type": "json",
       "tooltip": true,
-      "on-click": "kitty -e watch -n 1 sensors"
+      "on-click": "tilix -e watch -n 1 sensors"
     },
     "disk": {
       "interval": 5,
