@@ -1,0 +1,59 @@
+window {
+  font-family: "SF Pro";
+  font-size: 15pt;
+  color: #fff; /* text */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+button {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
+  background-color: transparent;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s ease-in;
+  box-shadow: 0 0 10px 2px transparent;
+  border-radius: 10px;
+}
+
+button:focus {
+  box-shadow: none;
+  background-size: 20%;
+}
+
+button:hover {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all 0.2s cubic-bezier(0.55, 0, 0.28, 1.682),
+    box-shadow 0.2s ease-in;
+}
+
+#shutdown,
+#shutdown:hover {
+  background-image: image(url("./icons/power.png"));
+}
+
+#logout,
+#logout:hover {
+  background-image: image(url("./icons/logout.png"));
+}
+
+#reboot,
+#reboot#hover {
+  background-image: image(url("./icons/restart.png"));
+}
+
+#lock,
+#lock:hover {
+  background-image: image(url("./icons/lock.png"));
+}
+
+#hibernate,
+#hibernate:hover {
+  background-image: image(url("./icons/hibernate.png"));
+}
+
+#sleep,
+#sleep:hover {
+  background-image: image(url("./icons/sleep.png"));
+}

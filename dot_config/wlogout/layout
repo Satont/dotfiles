@@ -1,0 +1,36 @@
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "Выключить",
+    "keybind" : "s"
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "Перезапустить",
+    "keybind" : "r"
+}
+{
+    "label" : "logout",
+    "action" : "loginctl kill-session $XDG_SESSION_ID",
+    "text" : "Выйти из пользователя",
+    "keybind" : "e"
+}
+{
+    "label" : "hibernate",
+    "action" : "hyprlock -f && systemctl hibernate",
+    "text" : "Гибернация",
+    "keybind" : "h"
+}
+{
+	"label" : "sleep",
+	"action" : "systemctl suspend",
+	"text" : "Сон",
+	"keybind" : "j"
+}
+{
+    "label" : "lock",
+    "action" : "hyprlock",
+    "text" : "Заблокировать",
+    "keybind" : "l"
+}
