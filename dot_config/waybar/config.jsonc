@@ -114,7 +114,8 @@
           "weekdays": "<span color='#cdd6f4'><b>{}</b></span>",
           "today": "<span color='#f38ba8'><b>{}</b></span>"
         }
-      }
+      }, 
+      "interval": 1
     },
     "cpu": {
       "format": "  {usage}%",
