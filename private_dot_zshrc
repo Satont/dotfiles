@@ -1,4 +1,6 @@
 # Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/satont/.zsh/completions:"* ]]; then export FPATH="/home/satont/.zsh/completions:$FPATH"; fi
+# Add deno completions to search path
 source ~/.config/antigen.zsh
 source ~/.zshprivate
 
@@ -33,12 +35,18 @@ alias dcd="docker context use default"
 alias dct="docker context use twir"
 alias td="docker --context twir"
 
+alias l='eza -lh --icons=auto --no-permissions' # long list
+alias ls='eza -1 --icons=auto --no-permissions' # short list
+alias ll='eza -lha --icons=auto --sort=name --group-directories-first --no-permissions' # long list all
+alias ld='eza -lhD --icons=auto --no-permissions' # long list dirs
+alias lt='eza --icons=auto --tree --no-permissions' # list folder as tree
+
 function tdu() {
-	td service update --with-registry-auth --force --image registry.twir.app/twirapp/$1 twir_$1
+	docker --context twir service update --with-registry-auth --force --image registry.twir.app/twirapp/$1 twir_$1
 }
 
 function tdl() {
-    td service logs -f --since 5m twir_$1
+    docker --context twir service logs -f --since 5m twir_$1
 }
 
 #alias jq="fx"
@@ -56,7 +64,6 @@ reboot_to_windows ()
     windows_title=$(grep -i windows /boot/grub/grub.cfg | cut -d "'" -f 2)
     sudo grub-reboot "$windows_title" && sudo reboot
 }
-alias reboot-to-windows='reboot_to_windows'
 
 # bun completions
 [ -s "/home/satont/.bun/_bun" ] && source "/home/satont/.bun/_bun"
@@ -69,6 +76,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-. "$HOME/.cargo/env"
-
 # export SSH_AUTH_SOCK=~/.bitwarden-ssh-agent.sock
+
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+. "/home/satont/.deno/env"
+___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
