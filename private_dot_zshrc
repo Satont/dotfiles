@@ -86,6 +86,8 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # Initialize modules
 # ------------------
 
+zstyle ':zim:input' double-dot-expand yes
+
 ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 # Download zimfw plugin manager if missing.
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
@@ -127,6 +129,8 @@ if [[ ":$FPATH:" != *":/home/satont/.zsh/completions:"* ]]; then export FPATH="/
 
 source ~/.zshprivate
 
+eval "$(starship init zsh)"
+
 # antigen use oh-my-zsh
 # 
 # antigen bundle git
@@ -140,8 +144,6 @@ source ~/.zshprivate
 # antigen bundle zsh-users/zsh-autosuggestions
 # 
 # antigen apply
-
-eval "$(starship init zsh)"
 
 SAVEHIST=100000
 HISTFILE=~/.zsh_history
@@ -204,4 +206,3 @@ export NVM_DIR="$HOME/.nvm"
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
 . "/home/satont/.deno/env"
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
-
