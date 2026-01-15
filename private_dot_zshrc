@@ -48,6 +48,23 @@ WORDCHARS=${WORDCHARS//[\/]}
 # Append `../` to your input for each `.` you type after an initial `..`
 #zstyle ':zim:input' double-dot-expand yes
 
+zstyle ':completion:*' menu select
+
+# Нечувствительность к регистру и частичное совпадение
+# (например, cd doc -> перейдет в Documents)
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# Раскрашивать список файлов теми же цветами, что и ls (GNU ls)
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# Группировать результаты по типу (файлы, алиасы, команды)
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:*:-command-:*:*' group-orders aliases functions commands
+
+# Добавляем описания к командам (например, опции git)
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format '[%d]'
+
 #
 # termtitle
 #
@@ -86,7 +103,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # Initialize modules
 # ------------------
 
-zstyle ':zim:input' double-dot-expand yes
+# zstyle ':zim:input' double-dot-expand yes
 
 ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 # Download zimfw plugin manager if missing.
@@ -123,10 +140,6 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim Framework install
 
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":/home/satont/.zsh/completions:"* ]]; then export FPATH="/home/satont/.zsh/completions:$FPATH"; fi
-# Add deno completions to search path
-
 source ~/.zshprivate
 
 eval "$(starship init zsh)"
@@ -151,7 +164,7 @@ HISTFILE=~/.zsh_history
 alias cu="chezmoi re-add"
 alias bat="bat --style=plain"
 alias r="rm -irf"
-alias grep="rg"
+# alias grep="rg"
 alias archclean="pacman -Qtdq | sudo pacman -Rns -"
 alias "dps"='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Networks}}\t{{.State}}\t{{.Status}}"'
 alias "twirforward"='ssh -L 54322:postgres:5432 satont@194.107.126.47 -p 2222'
@@ -204,5 +217,12 @@ export NVM_DIR="$HOME/.nvm"
 # export SSH_AUTH_SOCK=~/.bitwarden-ssh-agent.sock
 
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
-. "/home/satont/.deno/env"
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
+# Created by `pipx` on 2025-12-23 14:30:01
+export PATH="$PATH:/home/satont/.local/bin"
+
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+# opencode
+export PATH=/home/satont/.opencode/bin:$PATH
