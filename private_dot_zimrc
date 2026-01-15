@@ -61,8 +61,3 @@ zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found
 zmodule ohmyzsh/ohmyzsh --root plugins/fzf
 zmodule ohmyzsh/ohmyzsh --root plugins/docker-compose
 zmodule ohmyzsh/ohmyzsh --root plugins/nvm
-
-# External Zsh plugins
-zmodule zsh-users/zsh-history-substring-search
-zmodule zsh-users/zsh-syntax-highlighting
-zmodule zsh-users/zsh-autosuggestions
