@@ -12,6 +12,7 @@
 	autoSetupRemote = true
 [core]
 	autocrlf = input
+	editor = zed --wait
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -19,3 +20,5 @@
 	required = true
 [commit]
 	gpgsign = true
+[rerere]
+	enabled = true
