@@ -1,0 +1,40 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "opencode",
+  "model": "anthropic/claude-sonnet-4-5",
+  "autoupdate": true,
+  "tui": {
+    "scroll_speed": 3,
+    "scroll_acceleration": {
+      "enabled": true
+    }
+  },
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "ctx7sk-2566a48e-d983-4c43-ab9a-3bf71344ac3e"
+      },
+      "enabled": true
+    },
+    "bun": {
+      "type": "local",
+      "command": ["bunx", "-y", "mcp-bun@latest"],
+      "environment": {
+        "DISABLE_NOTIFICATIONS": "true"
+      },
+      "enabled": true
+    },
+    "shadcnVue": {
+      "type": "local",
+      "enabled": true,
+      "command": ["bunx", "shadcn-vue@latest", "mcp"]
+    },
+    "playwright": {
+	  "type": "local",
+	  "enabled": true,
+	  "command": ["bunx", "@playwright/mcp@latest", "--executable-path", "/usr/bin/zen-browser"]
+	}
+  }
+}
