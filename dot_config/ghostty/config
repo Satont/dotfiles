@@ -1,9 +1,12 @@
 font-family = JetBrains Mono
+font-size = 15
 background-opacity = 0.6
-theme = catppuccin-mocha
+theme = Chalk
 
-gtk-single-instance = true
+confirm-close-surface = false
+
+# gtk-single-instance = true
 gtk-titlebar = false
-gtk-adwaita = true
-
 shell-integration = zsh
+quit-after-last-window-closed = true
+quit-after-last-window-closed-delay = 5m
