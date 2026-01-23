@@ -217,7 +217,6 @@ export NVM_DIR="$HOME/.nvm"
 # export SSH_AUTH_SOCK=~/.bitwarden-ssh-agent.sock
 
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
 # Created by `pipx` on 2025-12-23 14:30:01
 export PATH="$PATH:/home/satont/.local/bin"
@@ -226,3 +225,4 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # opencode
 export PATH=/home/satont/.opencode/bin:$PATH
+___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
