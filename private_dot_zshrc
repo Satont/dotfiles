@@ -142,6 +142,7 @@ unset key
 
 source ~/.zshprivate
 
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
 # antigen use oh-my-zsh
@@ -189,14 +190,6 @@ function tdl() {
 
 #alias jq="fx"
 
-# pnpm
-export PNPM_HOME="/home/satont/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 reboot_to_windows ()
 {
     windows_title=$(grep -i windows /boot/grub/grub.cfg | cut -d "'" -f 2)
@@ -204,15 +197,11 @@ reboot_to_windows ()
 }
 
 # bun completions
-[ -s "/home/satont/.bun/_bun" ] && source "/home/satont/.bun/_bun"
+# [ -s "/home/satont/.bun/_bun" ] && source "/home/satont/.bun/_bun"
 
 # bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export BUN_INSTALL="$HOME/.bun"
+# export PATH="$BUN_INSTALL/bin:$PATH"
 
 # export SSH_AUTH_SOCK=~/.bitwarden-ssh-agent.sock
 
@@ -226,3 +215,11 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # opencode
 export PATH=/home/satont/.opencode/bin:$PATH
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
+export PATH=$PATH:/home/satont/.spicetify
+
+git(){
+  rgit $@
+}
+
+eval "$(~/.local/bin/mise activate zsh)"
