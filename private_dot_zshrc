@@ -3,6 +3,11 @@
 # User configuration sourced by interactive shells
 #
 
+# Ghostty shell integration - must be loaded before Zim
+if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
+  source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
+fi
+
 # -----------------
 # Zsh configuration
 # -----------------
@@ -165,6 +170,7 @@ HISTFILE=~/.zsh_history
 alias cu="chezmoi re-add"
 alias bat="bat --style=plain"
 alias r="rm -irf"
+alias cd="z"
 # alias grep="rg"
 alias archclean="pacman -Qtdq | sudo pacman -Rns -"
 alias "dps"='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Networks}}\t{{.State}}\t{{.Status}}"'
@@ -209,6 +215,7 @@ reboot_to_windows ()
 
 # Created by `pipx` on 2025-12-23 14:30:01
 export PATH="$PATH:/home/satont/.local/bin"
+export PATH="/home/satont/.bun/bin:$PATH"
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
