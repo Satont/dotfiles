@@ -6,7 +6,7 @@
     "margin-bottom": 3,
     "margin-left": 6,
     "margin-right": 6,
-    "modules-left": ["hyprland/workspaces", "mpris"],
+    "modules-left": ["hyprland/workspaces", "mpris", "custom/servers"],
     "modules-center": ["clock"],
     "modules-right": [
       "hyprland/language",
@@ -18,14 +18,14 @@
       "tray",
       "custom/color-picker",
       "custom/swaync",
-      "custom/power"
+      "custom/power",
     ],
     "custom/vpn": {
       "format": "",
       "exec": "echo '{\"class\": \"connected\"}'",
       "exec-if": "test -d /proc/sys/net/ipv4/conf/neko-tun",
       "return-type": "json",
-      "interval": 5
+      "interval": 5,
     },
     "custom/swaync": {
       "tooltip": true,
@@ -38,19 +38,19 @@
         "inhibited-notification": "<span foreground='red'><sup></sup></span>",
         "inhibited-none": "",
         "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-        "dnd-inhibited-none": ""
+        "dnd-inhibited-none": "",
       },
       "return-type": "json",
       "exec-if": "which swaync-client",
       "exec": "swaync-client -swb",
       "on-click": "sleep 0.1 && swaync-client -t -sw",
       "on-click-right": "swaync-client -d -sw",
-      "escape": true
+      "escape": true,
     },
     "hyprland/language": {
       "format": "{}",
       "format-ru": "🇷🇺",
-      "format-en": "🇺🇸"
+      "format-en": "🇺🇸",
     },
     "hyprland/workspaces": {
       "all-outputs": false,
@@ -58,17 +58,17 @@
       "format-icons": {
         "active": "",
         "visible": "",
-        "default": ""
+        "default": "",
       },
       "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
       "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
       "sort-by-number": true,
       "active-only": false,
       "persistent-workspaces": {
-        "DP-2": [ 1, 8 ],
-        "HDMI-A-1": [ 9, 10 ],
-        "HDMI-A-2": [ 11, 12 ],
-      }
+        "DP-2": [1, 8],
+        "HDMI-A-1": [9, 10],
+        "HDMI-A-2": [11, 12],
+      },
     },
     "mpris": {
       "format": "{player_icon}  {artist} - {title}",
@@ -78,12 +78,12 @@
       "player-icons": {
         "default": "▶",
         "mpv": "",
-        "spotify": "󰓇"
+        "spotify": "󰓇",
       },
       "status-icons": {
         "paused": "",
-        "stopped": ""
-      }
+        "stopped": "",
+      },
     },
     "hyprland/window": {
       "format": "{title}",
@@ -99,8 +99,8 @@
         "yazi: (.*)": "  $1",
         "nwg-look": "  GTK Settings",
         "Qt6 Configuration Tool": "  QT Settings",
-        "blueman-manager": "Bluetooth Settings"
-      }
+        "blueman-manager": "Bluetooth Settings",
+      },
     },
     "clock": {
       "format": "{:%d.%m - %H:%M:%S}",
@@ -112,20 +112,20 @@
           "days": "<span color='#cdd6f4'><b>{}</b></span>",
           "weeks": "<span color='#cdd6f4'><b>W{}</b></span>",
           "weekdays": "<span color='#cdd6f4'><b>{}</b></span>",
-          "today": "<span color='#f38ba8'><b>{}</b></span>"
-        }
-      }, 
-      "interval": 1
+          "today": "<span color='#f38ba8'><b>{}</b></span>",
+        },
+      },
+      "interval": 1,
     },
     "cpu": {
       "format": "  {usage}%",
       "on-click": "tilix -e btop",
-      "interval": 1
+      "interval": 1,
     },
     "memory": {
       "format": "  {}%",
       "on-click": "tilix -e btop",
-      "interval": 1
+      "interval": 1,
     },
     "custom/bluetooth": {
       "exec": "~/.config/waybar/scripts/bluetooth.sh",
@@ -134,11 +134,11 @@
       "tooltip": true,
       "tooltip-format": "Bluetooth",
       "format": "{}",
-      "rotate": false
+      "rotate": false,
     },
     "tray": {
       "icon-size": 15,
-      "spacing": 10
+      "spacing": 10,
     },
     "pulseaudio": {
       "format": "{icon} <b>{volume}%</b>",
@@ -147,20 +147,20 @@
       "format-bluetooth-muted": "󰝟 ",
       "format-icons": {
         "headset": "",
-        "default": ["󰕿", "󰖀", "󰕾"]
+        "default": ["󰕿", "󰖀", "󰕾"],
       },
       "tooltip": true,
-      "on-click": "easyeffects"
+      "on-click": "easyeffects",
     },
     "custom/color-picker": {
       "format": "",
       "on-click": "hyprpicker -an",
-      "tooltip-format": "Color Picker"
+      "tooltip-format": "Color Picker",
     },
     "custom/power": {
       "format": "",
       "tooltip": false,
-      "on-click": "wlogout"
+      "on-click": "wlogout",
     },
     "custom/temperature": {
       "format": " {}°C",
@@ -168,11 +168,17 @@
       "exec": "~/.config/waybar/scripts/temperature.sh",
       "return-type": "json",
       "tooltip": true,
-      "on-click": "tilix -e watch -n 1 sensors"
+      "on-click": "tilix -e watch -n 1 sensors",
     },
     "disk": {
       "interval": 5,
-      "format": "{percentage_free}%  "
+      "format": "{percentage_free}%  ",
     },
-  }
+    "custom/servers": {
+      "exec": "bun run ~/.config/waybar/scripts/twir-servers/index.ts",
+      "interval": 5,
+      "format": "{}",
+      "return-type": "json",
+    },
+  },
 ]
