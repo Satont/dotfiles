@@ -6,11 +6,10 @@
     "margin-bottom": 3,
     "margin-left": 6,
     "margin-right": 6,
-    "modules-left": ["hyprland/workspaces", "mpris", "custom/servers"],
+    "modules-left": ["hyprland/workspaces", "mpris"],
     "modules-center": ["clock"],
     "modules-right": [
       "hyprland/language",
-      "custom/temperature",
       "cpu",
       "memory",
       "disk",
@@ -55,6 +54,8 @@
     "hyprland/workspaces": {
       "all-outputs": false,
       "format": "{icon}",
+      "on-click": "activate",
+      "move-to-monitor": true,
       "format-icons": {
         "active": "",
         "visible": "",
@@ -65,7 +66,7 @@
       "sort-by-number": true,
       "active-only": false,
       "persistent-workspaces": {
-        "DP-2": [1, 8],
+        "DP-1": [1, 2, 3, 4, 5, 6, 7, 8],
         "HDMI-A-1": [9, 10],
         "HDMI-A-2": [11, 12],
       },
@@ -163,9 +164,17 @@
       "on-click": "wlogout",
     },
     "custom/temperature": {
-      "format": " {}°C",
-      "interval": 1,
+      "format": "{}",
+      "interval": 2,
       "exec": "~/.config/waybar/scripts/temperature.sh",
+      "return-type": "json",
+      "tooltip": true,
+      "on-click": "tilix -e watch -n 1 sensors",
+    },
+    "custom/dgpu": {
+      "format": "{}",
+      "interval": 2,
+      "exec": "~/.config/waybar/scripts/dgpu.sh",
       "return-type": "json",
       "tooltip": true,
       "on-click": "tilix -e watch -n 1 sensors",

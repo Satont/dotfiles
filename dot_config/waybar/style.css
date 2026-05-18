@@ -18,6 +18,17 @@
   margin-right: 10pt;
 }
 
+#custom-temperature.missing {
+  margin-right: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+#custom-dgpu {
+  margin-right: 10pt;
+  min-width: 72pt;
+}
+
 #custom-bluetooth {
   color: #0082fc;
   margin-right: 10pt;
