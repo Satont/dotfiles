@@ -111,9 +111,15 @@ hl.window_rule({
 
 hl.window_rule({
     name = "spotify-opacity",
-    opacity = "0.88 0.88",
+    opacity = "0.8 0.8",
     match = { class = "^([Ss]potify)$" },
 })
+
+-- hl.window_rule({
+--     name = "discord-opacity",
+--     opacity = "0.8 0.8",
+--     match = { class = "discord" },
+-- })
 
 hl.window_rule({
     name = "windowrule-goland",
@@ -199,4 +205,10 @@ hl.window_rule({
     size = "(monitor_w*0.7) (monitor_h*0.8)",
     workspace = "special:opencode",
     match = { initial_title = "^OpenCode Float$" },
+})
+
+hl.window_rule({
+  name = "ghostty-no-blur",
+  match = { class = "com.mitchellh.ghostty" },
+  no_blur = true,
 })
