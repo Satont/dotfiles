@@ -6,7 +6,7 @@ hl.bind(MAIN_MOD .. " + D", hl.dsp.exec_cmd(MENU))
 hl.bind(MAIN_MOD .. " + SHIFT + P", hl.dsp.window.pseudo())
 hl.bind(MAIN_MOD .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(MAIN_MOD .. " + F", hl.dsp.window.fullscreen())
-hl.bind(MAIN_MOD .. " + c", hl.dsp.exec_cmd("vicinae vicinae://extensions/vicinae/clipboard/history"))
+hl.bind(MAIN_MOD .. " + C", hl.dsp.exec_cmd("vicinae vicinae://launch/clipboard/history"))
 hl.bind(MAIN_MOD .. " + O", hl.dsp.exec_cmd("ghostty -e /home/satont/.opencode/bin/opencode"))
 hl.bind(MAIN_MOD .. " + SHIFT + O", hl.dsp.exec_cmd("~/.config/hypr/opencode-toggle.sh"))
 

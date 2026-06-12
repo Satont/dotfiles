@@ -22,7 +22,7 @@ hl.window_rule({
     name = "windowrule-4",
     float = true,
     size = "(monitor_w*0.5) (monitor_h*0.5)",
-    match = { class = "nemo" },
+    match = { class = "org.gnome.Nautilus" },
 })
 
 hl.window_rule({
