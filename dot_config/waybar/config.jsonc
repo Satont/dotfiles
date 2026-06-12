@@ -14,6 +14,7 @@
       "memory",
       "disk",
       "pulseaudio",
+      "custom/oneplus-buds",
       "tray",
       "custom/color-picker",
       "custom/swaync",
@@ -189,5 +190,10 @@
       "format": "{}",
       "return-type": "json",
     },
+    "custom/oneplus-buds": {
+      "exec": "~/.config/waybar/scripts/oneplus-buds-battery.sh",
+      "interval": 30,
+      "return-type": "json"
+    }
   },
 ]
