@@ -116,10 +116,17 @@ autoload -Uz _zinit
 # zinit light rupa/command-not-found
 
 
-bindkey "^[[1;5C" forward-word  # ctrl + ->
-bindkey "^[[1;5D" backward-word # ctrl + <-
-bindkey '^[[H' beginning-of-line # replace ctrl + a cursor start of line
-bindkey '^[[F' end-of-line # replace ctrl + e cursor end of line
+# bindkey "^[[1;5C" forward-word  # ctrl + ->
+# bindkey "^[[1;5D" backward-word # ctrl + <-
+# bindkey '^[[H' beginning-of-line # replace ctrl + a cursor start of line
+# bindkey '^[[F' end-of-line # replace ctrl + e cursor end of line
 
 
 eval "$(/home/satont/.local/bin/mise activate zsh)"
+
+# >>> Codex installer >>>
+export PATH="/home/satont/.local/bin:$PATH"
+# <<< Codex installer <<<
+
+# nub
+export PATH="$HOME/.nub/bin:$PATH"
