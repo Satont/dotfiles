@@ -212,3 +212,9 @@ hl.window_rule({
   match = { class = "com.mitchellh.ghostty" },
   no_blur = true,
 })
+
+hl.window_rule({
+  name = "recordly-no-blur",
+  match = { class = "Recordly" },
+  no_blur = true,
+})
