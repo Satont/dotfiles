@@ -1,7 +1,14 @@
 font-family = JetBrains Mono
 font-size = 13
-background-opacity = 0.8
-theme = Chalk
+# background-opacity = 0.8
+# theme = Chalk
+# theme = Catppuccin Mocha
+
+
+theme = Rose Pine Moon
+background = 000000
+background-opacity = 0.85
+background-blur = false
 
 confirm-close-surface = false
 
@@ -10,3 +17,5 @@ gtk-titlebar = false
 shell-integration = zsh
 quit-after-last-window-closed = true
 quit-after-last-window-closed-delay = 5m
+
+keybind = super+space=text:
