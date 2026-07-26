@@ -39,7 +39,7 @@
       "type": "remote",
       "url": "https://mcp.context7.com/mcp",
       "headers": {
-        "CONTEXT7_API_KEY": "ctx7sk-2566a48e-d983-4c43-ab9a-3bf71344ac3e"
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
       },
       "enabled": true
     },
@@ -68,10 +68,8 @@
       "type": "local",
       "enabled": true,
       "command": [
-        "/home/satont/.local/share/mise/shims/bunx",
-        "@playwright/mcp@latest",
-        "--executable-path",
-        "/usr/bin/helium-browser"
+        "/usr/bin/obscura",
+        "mcp"
       ]
     },
     "codegraph": {
@@ -84,18 +82,25 @@
       "enabled": true
     },
     "grepApp": {
-    	"type": "remote",
-    	"url": "https://mcp.grep.app",
-    	"enabled": true
+      "type": "remote",
+      "url": "https://mcp.grep.app",
+      "enabled": true
     }
   },
   "plugin": [
-    "opencode-mystatus"
+    "opencode-mystatus",
+    "oh-my-openagent@latest",
+    "@slkiser/opencode-quota@latest"
   ],
   "command": {
     "mystatus": {
       "description": "Query quota usage for all AI accounts",
       "template": "Use the mystatus tool to query quota usage. Return the result as-is without modification."
     }
+  },
+  "provider": {
+    "openai": {},
+    "zai": {},
+    "kimi-for-coding": {}
   }
 }
