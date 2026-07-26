@@ -1,0 +1,11 @@
+[default]
+steps = ["direnv allow 2>/dev/null || true"]
+
+[[project]]
+path = "~/Documents/Projects/twir"
+steps = [
+  'cp "$HERDR_MAIN_REPO"/.env* . 2>/dev/null || true',
+  "mise trust 2>/dev/null || true",
+  "bun i --frozen-lockfile",
+  'cp "$HERDR_MAIN_REPO"/.opencode/.pg-prod-url* ./.opencode 2>/dev/null || true',
+]
