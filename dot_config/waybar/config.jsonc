@@ -6,7 +6,7 @@
     "margin-bottom": 3,
     "margin-left": 6,
     "margin-right": 6,
-    "modules-left": ["hyprland/workspaces", "mpris"],
+    "modules-left": ["hyprland/workspaces", "mpris", "custom/herdr"],
     "modules-center": ["clock"],
     "modules-right": [
       "hyprland/language",
@@ -193,6 +193,11 @@
     "custom/oneplus-buds": {
       "exec": "~/.config/waybar/scripts/oneplus-buds-battery.sh",
       "interval": 30,
+      "return-type": "json"
+    },
+    "custom/herdr": {
+      "exec": "~/.config/waybar/scripts/herdr.sh",
+      "interval": 2,
       "return-type": "json"
     }
   },
