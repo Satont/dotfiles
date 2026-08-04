@@ -6,8 +6,19 @@ text=$(
   jq -r '
     .result.agents
     | map(select(.agent_status == "working"))
-    | group_by(.cwd | split("/")[-1])
-    | map("\(.[0].cwd | split("/")[-1]) - \(length)")
+    | map(
+        . as $agent
+        | .display_name = (
+            ($agent.terminal_title_stripped // "")
+            | if startswith("OC | ") then
+                ltrimstr("OC | ")
+              else
+                ($agent.cwd | split("/")[-1])
+              end
+          )
+      )
+    | group_by(.display_name)
+    | map("\(.[0].display_name) - \(length)")
     | join(" | ")
   ' <<<"$json"
 )
