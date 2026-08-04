@@ -19,3 +19,34 @@ quit-after-last-window-closed = true
 quit-after-last-window-closed-delay = 5m
 
 keybind = super+space=text:
+
+# Fix keybinds on non-Latin (Russian) layout — use W3C physical key names
+# https://github.com/ghostty-org/ghostty/discussions/12105
+
+# Terminal control characters (SIGINT, EOF, readline, etc.)
+keybind = ctrl+key_c=text:\x03
+keybind = ctrl+key_d=text:\x04
+keybind = ctrl+key_z=text:\x1a
+keybind = ctrl+key_v=text:\x16
+keybind = ctrl+key_r=text:\x12
+keybind = ctrl+key_l=text:\x0c
+keybind = ctrl+key_u=text:\x15
+keybind = ctrl+key_a=text:\x01
+keybind = ctrl+key_e=text:\x05
+keybind = ctrl+key_k=text:\x0b
+keybind = ctrl+key_w=text:\x17
+
+# Ghostty UI actions (copy/paste/tabs/splits/etc.)
+keybind = ctrl+shift+key_c=copy_to_clipboard:mixed
+keybind = ctrl+shift+key_v=paste_from_clipboard
+keybind = ctrl+shift+key_w=close_surface
+keybind = ctrl+shift+key_t=new_tab
+keybind = ctrl+shift+key_o=new_split:right
+keybind = ctrl+shift+key_e=new_split:down
+keybind = ctrl+shift+key_n=new_window
+keybind = ctrl+shift+key_q=quit
+keybind = ctrl+shift+key_f=start_search
+keybind = ctrl+shift+key_j=write_screen_file:paste,plain
+keybind = ctrl+shift+key_a=select_all
+keybind = ctrl+shift+key_i=inspector:toggle
+keybind = ctrl+shift+key_p=toggle_command_palette
