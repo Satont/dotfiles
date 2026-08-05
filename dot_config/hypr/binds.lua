@@ -76,4 +76,7 @@ hl.bind(MAIN_MOD .. " + period", hl.dsp.exec_cmd("vicinae vicinae://extensions/v
 
 hl.bind("F8", hl.dsp.pass({ window = "class:^(discord)$" }))
 hl.bind("F7", hl.dsp.pass({ window = "class:^(discord)$" }))
-hl.bind("CTRL + 0", hl.dsp.pass({ window = "class:^(com.obsproject.Studio)$" }))
+-- hl.bind("CTRL + 0", hl.dsp.pass({ window = "class:^(com.obsproject.Studio)$" }))
+-- hl.bind("CTRL + 0", hl.dsp.pass({ window = "class:^(obs)$" }))
+hl.bind("CTRL + 0", hl.dsp.exec_cmd("obs-cmd --websocket obsws://127.0.0.1:4455/576294Aa filter toggle Screen blur"))
+hl.bind(MAIN_MOD .. " + L", hl.dsp.exec_cmd("handy --toggle-transcription"))
