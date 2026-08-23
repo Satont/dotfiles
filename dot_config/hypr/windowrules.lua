@@ -218,3 +218,4 @@ hl.window_rule({
   match = { class = "Recordly" },
   no_blur = true,
 })
+
