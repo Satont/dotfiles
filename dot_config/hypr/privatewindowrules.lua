@@ -1,10 +1,22 @@
 -- 1. Создаём named rules, но ВЫКЛЮЧЕННЫЕ по умолчанию
 local hideSensitive = hl.window_rule({
-    name = "hide-sensitive-apps",
+    name = "hide_sensitive_apps",
     no_screen_share = true,
-    match = { class = "^(org.telegram.desktop|discord)$" }
+    match = { 
+    	class = "^(org.telegram.desktop|discord)$",
+   	}
 })
 hideSensitive:set_enabled(false)
+
+local hideWorkStuff = hl.window_rule({
+	name = "hide_work_stuff",
+	no_screen_share = true,
+	match = {
+		title = ".*(Documents/M).*"
+	}
+})
+
+hideWorkStuff:set_enabled(false)
 
 local hideEnv = hl.window_rule({
     name = "hide_env_edit",
@@ -20,6 +32,7 @@ hideEnv:set_enabled(false)
 local function setPrivacy(enabled)
     hideSensitive:set_enabled(enabled)
     hideEnv:set_enabled(enabled)
+    hideWorkStuff:set_enabled(enabled)
     
     if enabled then
         hl.notification.create({ 
