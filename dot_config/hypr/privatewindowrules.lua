@@ -3,7 +3,7 @@ local hideSensitive = hl.window_rule({
     name = "hide_sensitive_apps",
     no_screen_share = true,
     match = { 
-    	class = "^(org.telegram.desktop|discord)$",
+    	class = "^(org.telegram.desktop|discord|zen-work)$",
    	}
 })
 hideSensitive:set_enabled(false)
