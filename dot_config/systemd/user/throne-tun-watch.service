@@ -1,0 +1,12 @@
+[Unit]
+Description=Restart tailscaled on throne-tun changes
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.config/hypr/throne-tun-watch.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
