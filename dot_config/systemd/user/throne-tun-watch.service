@@ -4,7 +4,7 @@ After=graphical-session.target
 
 [Service]
 Type=simple
-ExecStart=%h/.config/hypr/throne-tun-watch.sh
+ExecStart=%h/.config/hypr/throne-tailscale-watch.sh
 Restart=always
 RestartSec=5
 
