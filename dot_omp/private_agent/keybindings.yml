@@ -1,0 +1,6 @@
+# Free Ctrl+P for the pi-command-palette extension (OpenCode-style layout):
+# model cycling moves to Alt+Right/Alt+Left, thinking cycle to Ctrl+T.
+app.model.cycleForward: alt+right
+app.model.cycleBackward: alt+left
+app.thinking.cycle: ctrl+t
+app.thinking.toggle: ctrl+n
