@@ -1,0 +1,177 @@
+modelRoles:
+  default: kimi-code/k3-256k
+  task: kimi-code/k3
+  smol: zai/glm-5.3-flash
+  slow: kimi-code/k3
+  plan: kimi-code/k3
+  advisor: kimi-code/k3
+  scout: zai/glm-5.3-flash
+  reviewer: kimi-code/k3
+  designer: kimi-code/k3-256k
+  librarian: zai/glm-5.3-flash
+  security-reviewer: kimi-code/k3
+  sonic: zai/glm-5.3-flash
+  sisyphus: kimi-code/k3
+  oracle: kimi-code/k3
+  explore: zai/glm-5.3-flash
+  multimodal-looker: kimi-code/k3-256k
+  prometheus: kimi-code/k3
+  metis: kimi-code/k3
+  momus: kimi-code/k3
+  atlas: kimi-code/k3
+  sisyphus-junior: zai/glm-5.3
+  visual-engineering: zai/glm-5.3
+  ultrabrain: kimi-code/k3
+  deep: kimi-code/k3
+  artistry: zai/glm-5.3
+  quick: zai/glm-5.3-flash
+  unspecified-low: zai/glm-5.3-flash
+  unspecified-high: kimi-code/k3
+  writing: zai/glm-5.3-flash
+symbolPreset: nerd
+composer:
+  shape: rail
+theme:
+  dark: titanium
+  light: light
+setupVersion: 2
+memory:
+  backend: local
+autolearn:
+  enabled: true
+  autoContinue: true
+astGrep:
+  enabled: true
+generate_image:
+  enabled: true
+speechgen:
+  enabled: true
+github:
+  enabled: true
+hideThinkingBlock: false
+display:
+  showTokenUsage: true
+  collapseCompacted: false
+  cacheMissMarker: true
+secrets:
+  enabled: true
+dev:
+  autoqaConsent: denied
+task:
+  agentModelOverrides:
+    task:
+      - kimi-code/k3
+      - zai/glm-5.3
+    scout:
+      - zai/glm-5.3-flash
+      - zai/glm-5.3
+    reviewer:
+      - kimi-code/k3
+      - zai/glm-5.3
+    designer:
+      - kimi-code/k3-256k
+      - zai/glm-5.3-flash
+    librarian:
+      - zai/glm-5.3-flash
+      - zai/glm-5.3
+    security-reviewer:
+      - kimi-code/k3
+      - zai/glm-5.3
+    sonic:
+      - zai/glm-5.3-flash
+      - zai/glm-5.3
+  disabledAgents:
+    []
+  agentAdvisor:
+    {}
+retry:
+  fallbackChains:
+    default:
+      - kimi-code/k3-256k
+      - kimi-code/k3
+      - zai/glm-5.3
+    task:
+      - kimi-code/k3
+      - zai/glm-5.3
+    smol:
+      - zai/glm-5.3-flash
+      - zai/glm-5.3
+    slow:
+      - kimi-code/k3
+      - zai/glm-5.3
+    plan:
+      - kimi-code/k3
+      - zai/glm-5.3
+    advisor:
+      - kimi-code/k3
+      - zai/glm-5.3
+    scout:
+      - zai/glm-5.3-flash
+      - zai/glm-5.3
+    reviewer:
+      - kimi-code/k3
+      - zai/glm-5.3
+    designer:
+      - kimi-code/k3-256k
+      - zai/glm-5.3-flash
+    librarian:
+      - zai/glm-5.3-flash
+      - zai/glm-5.3
+    security-reviewer:
+      - kimi-code/k3
+      - zai/glm-5.3
+    sonic:
+      - zai/glm-5.3-flash
+      - zai/glm-5.3
+    sisyphus:
+      - kimi-code/k3
+      - zai/glm-5.3
+    oracle:
+      - kimi-code/k3
+      - zai/glm-5.3
+    explore:
+      - zai/glm-5.3-flash
+      - zai/glm-5.3
+    multimodal-looker:
+      - kimi-code/k3-256k
+      - zai/glm-5.3-flash
+    prometheus:
+      - kimi-code/k3
+      - zai/glm-5.3
+    metis:
+      - kimi-code/k3
+      - zai/glm-5.3
+    momus:
+      - kimi-code/k3
+      - zai/glm-5.3
+    atlas:
+      - kimi-code/k3
+      - zai/glm-5.3
+    sisyphus-junior:
+      - zai/glm-5.3
+      - kimi-code/k3
+    visual-engineering:
+      - zai/glm-5.3
+    ultrabrain:
+      - kimi-code/k3
+      - zai/glm-5.3
+    deep:
+      - kimi-code/k3
+      - zai/glm-5.3
+    artistry:
+      - zai/glm-5.3
+    quick:
+      - zai/glm-5.3-flash
+      - zai/glm-5.3
+    unspecified-low:
+      - zai/glm-5.3-flash
+      - zai/glm-5.3
+    unspecified-high:
+      - kimi-code/k3
+      - zai/glm-5.3
+    writing:
+      - zai/glm-5.3-flash
+      - zai/glm-5.3
+disabledProviders:
+  - openrouter
+  - opencode-zen
