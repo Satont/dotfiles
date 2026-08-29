@@ -1,0 +1,10 @@
+{
+  "plugins": {
+    "pi-command-palette": {
+      "version": "0.2.2",
+      "enabledFeatures": null,
+      "enabled": true
+    }
+  },
+  "settings": {}
+}

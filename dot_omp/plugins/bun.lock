@@ -1,0 +1,15 @@
+{
+  "lockfileVersion": 2,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "omp-plugins",
+      "dependencies": {
+        "pi-command-palette": "0.2.2",
+      },
+    },
+  },
+  "packages": {
+    "pi-command-palette": ["pi-command-palette@0.2.2", "", { "peerDependencies": { "@earendil-works/pi-coding-agent": "*" }, "optionalPeers": ["@earendil-works/pi-coding-agent"] }, "sha512-rpSGLhUtpiZDZfCzAFXnwHLQhyD17vzU83+flW6Qb3/+3PaQSZ9pic1srzENmsYF1Z7/NkavFCs1QISLzwVo+Q=="],
+  }
+}

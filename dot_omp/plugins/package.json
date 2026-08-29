@@ -1,0 +1,7 @@
+{
+  "name": "omp-plugins",
+  "private": true,
+  "dependencies": {
+    "pi-command-palette": "0.2.2"
+  }
+}
