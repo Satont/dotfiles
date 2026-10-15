@@ -219,3 +219,21 @@ hl.window_rule({
   no_blur = true,
 })
 
+-- xwaylandvideobridge (мост шаринга экрана для X11-приложений) создаёт пустое
+-- чёрное окно-заглушку. Делаем его невидимым и минимальным, вне тайлинга,
+-- и не даём забирать фокус. Сам bridge при этом продолжает работать.
+hl.window_rule({
+  name = "xwaylandvideobridge-hidden",
+  match = { class = "^(xwaylandvideobridge)$" },
+
+  float = true,
+  max_size = "1 1",
+  opacity = "0.0 override",
+  no_initial_focus = true,
+  no_focus = true,
+  no_anim = true,
+  no_blur = true,
+  no_shadow = true,
+  no_dim = true,
+})
+
