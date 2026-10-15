@@ -1,3 +1,6 @@
+# # Iris Autocomplete
+# eval "$(iris init zsh)"
+
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME=""
@@ -43,6 +46,10 @@ alias ll='eza -lha --icons=auto --sort=name --group-directories-first --no-permi
 alias ld='eza -lhD --icons=auto --no-permissions' # long list dirs
 alias lt='eza --icons=auto --tree --no-permissions' # list folder as tree
 
+omoa() {
+  OPENCODE_CONFIG_CONTENT='{"plugin":["oh-my-opencode@latest"]}' command opencode "$@"
+}
+
 function tdu() {
 	docker --context twir service update --with-registry-auth --force --image registry.twir.app/twirapp/$1 twir_$1
 }
@@ -78,8 +85,6 @@ export PATH="/home/satont/.bun/bin:$PATH"
 
 # export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-# opencode
-export PATH=/home/satont/.opencode/bin:$PATH
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
 export PATH=$PATH:/home/satont/.spicetify
@@ -130,3 +135,12 @@ export PATH="/home/satont/.local/bin:$PATH"
 
 # nub
 export PATH="$HOME/.nub/bin:$PATH"
+
+# kimi-code
+export PATH="/home/satont/.kimi-code/bin:$PATH"
+
+# opencode
+export PATH="/home/satont/.opencode/bin:$PATH"
+
+# omp local patches: keep cli.js + plugin patched across omp updates (idempotent, ~10ms)
+omp() { "$HOME/.omp/agent/omp-patches/apply.sh" >/dev/null 2>&1; command omp "$@"; }
