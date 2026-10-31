@@ -17,9 +17,9 @@ enabled = false
 
 [keys]
 prefix = "ctrl+b"
-goto = "ctrl+p"
-new_tab = "ctrl+t"
-next_tab = "ctrl+shift+right"
+goto = "ctrl+shift+p"
+# new_tab = "ctrl+t"
+next_tab = ["ctrl+shift+right", "ctrl+tab"]
 previous_tab = "ctrl+shift+left"
 focus_pane_left = "prefix+h"
 next_workspace = "ctrl+shift+down"

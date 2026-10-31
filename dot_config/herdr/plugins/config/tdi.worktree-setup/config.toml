@@ -5,7 +5,18 @@ steps = ["direnv allow 2>/dev/null || true"]
 path = "~/Documents/Projects/twir"
 steps = [
   'cp "$HERDR_MAIN_REPO"/.env* . 2>/dev/null || true',
+  'cp "$HERDR_MAIN_REPO"/.opencode/.pg-prod-url* ./.opencode 2>/dev/null || true',
+  'cp "$HERDR_MAIN_REPO"/.opencode/.redis-prod-pwd* ./.opencode 2>/dev/null || true',
+  'cp "$HERDR_MAIN_REPO"/.opencode/.clickhouse-prod-pwd* ./.opencode 2>/dev/null || true',
   "mise trust 2>/dev/null || true",
   "bun i --frozen-lockfile",
-  'cp "$HERDR_MAIN_REPO"/.opencode/.pg-prod-url* ./.opencode 2>/dev/null || true',
+]
+
+[[project]]
+path = "~/Documents/Projects/M/ugc-new"
+steps = [
+  'cp "$HERDR_MAIN_REPO"/.env* . 2>/dev/null || true',
+  'cp "$HERDR_MAIN_REPO"/config.json* . 2>/dev/null || true',
+  "mise trust 2>/dev/null || true",
+  "bun i --frozen-lockfile",
 ]
