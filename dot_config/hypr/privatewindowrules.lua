@@ -3,10 +3,31 @@ local hideSensitive = hl.window_rule({
     name = "hide_sensitive_apps",
     no_screen_share = true,
     match = { 
-    	class = "^(org.telegram.desktop|discord|zen-work|io.github.tdesktop_x64.TDesktop)$",
+    	class = "^(zen-work)$",
    	}
 })
 hideSensitive:set_enabled(false)
+
+-- Telegram (64Gram): скрываем все окна, кроме окна с чатом «Satont.»
+local hideTelegram = hl.window_rule({
+    name = "hide_telegram",
+    no_screen_share = true,
+    match = {
+        class = "^(org.telegram.desktop|io.github.tdesktop_x64.TDesktop)$",
+        title = "negative:.*Satont\\..*",
+    }
+})
+hideTelegram:set_enabled(false)
+
+local hideDiscord = hl.window_rule({
+    name = "hide_discord",
+    no_screen_share = true,
+    match = {
+        class = "^discord$",
+		title = "negative:.*(?i:twir ?app).*"
+    }
+})
+hideDiscord:set_enabled(false)
 
 local hideWorkStuff = hl.window_rule({
 	name = "hide_work_stuff",
@@ -33,6 +54,8 @@ local function setPrivacy(enabled)
     hideSensitive:set_enabled(enabled)
     hideEnv:set_enabled(enabled)
     hideWorkStuff:set_enabled(enabled)
+    hideDiscord:set_enabled(enabled)
+    hideTelegram:set_enabled(enabled)
     
     if enabled then
         hl.notification.create({ 
