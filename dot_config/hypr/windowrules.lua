@@ -97,6 +97,12 @@ hl.window_rule({
     match = { class = "^(dev.zed.Zed-.*)$" },
 })
 
+-- hl.window_rule({
+-- 	name = "twirchat-blur",
+-- 	opacity = "0.8 0.8",
+-- 	match = { class = "^(dev.twirchat.app)$" },
+-- })
+
 hl.window_rule({
     name = "windowrule-24",
     opacity = "0.9 0.9",
