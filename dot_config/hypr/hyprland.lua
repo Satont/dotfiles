@@ -69,6 +69,14 @@ hl.config({
             xray = true,
             vibrancy = 0.1696,
         },
+        wobble = {
+            enabled = true,
+            mesh = 12,
+            stiffness = 200,
+            damping = 12,
+            mass = 1,
+            intensity = 0.2,
+        },
     },
 })
 
@@ -155,8 +163,9 @@ FILE_MANAGER = "nautilus"
 BROWSER = "zen-browser"
 MENU = "vicinae vicinae://toggle"
 
-dofile(os.getenv("HOME") .. "/.config/hypr/windowrules.lua")
-dofile(os.getenv("HOME") .. "/.config/hypr/env.lua")
-dofile(os.getenv("HOME") .. "/.config/hypr/exec.lua")
-dofile(os.getenv("HOME") .. "/.config/hypr/binds.lua")
-dofile(os.getenv("HOME") .. "/.config/hypr/privatewindowrules.lua")
+
+require("./windowrules.lua")
+require("./env.lua")
+require("./exec.lua")
+require("./binds.lua")
+require("./privatewindowrules.lua")
