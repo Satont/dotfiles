@@ -163,9 +163,8 @@ FILE_MANAGER = "nautilus"
 BROWSER = "zen-browser"
 MENU = "vicinae vicinae://toggle"
 
-
-require("./windowrules.lua")
-require("./env.lua")
-require("./exec.lua")
-require("./binds.lua")
-require("./privatewindowrules.lua")
+require("windowrules")
+require("env")
+require("exec")
+require("binds")
+require("privatewindowrules")
