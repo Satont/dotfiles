@@ -97,11 +97,19 @@ hl.window_rule({
     match = { class = "^(dev.zed.Zed-.*)$" },
 })
 
--- hl.window_rule({
--- 	name = "twirchat-blur",
--- 	opacity = "0.8 0.8",
--- 	match = { class = "^(dev.twirchat.app)$" },
--- })
+hl.window_rule({
+	name = "twirchat-blur",
+	opacity = "0.95 0.95",
+	no_blur = true,
+	match = { class = "^(dev.twirchat.app)$" },
+})
+
+hl.window_rule({
+	name = "chatgpt",
+	opacity = "0.95 0.95",
+	no_blur = true,
+	match = { class = "^(chatgpt)$" },
+})
 
 hl.window_rule({
     name = "windowrule-24",
@@ -243,3 +251,9 @@ hl.window_rule({
   no_dim = true,
 })
 
+
+hl.layer_rule({
+  match = { namespace = "^omasnap$" },
+  no_anim = true,
+  animation = "none",
+})
